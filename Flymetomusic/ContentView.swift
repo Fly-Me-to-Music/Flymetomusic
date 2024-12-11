@@ -1,24 +1,20 @@
-//
-//  ContentView.swift
-//  Flymetomusic
-//
-//  Created by Hüseyin Demirtürk on 10.12.2024.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = HomeViewModel()
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Home()
+                .environmentObject(viewModel)
+                .background(
+                    Color(
+                        red: 0 / 255,
+                        green: 1 / 255,
+                        blue: 34 / 255,
+                        opacity: 1)
+                )
         }
-        .padding()
+        .foregroundColor(Color.white)
     }
-}
-
-#Preview {
-    ContentView()
 }
