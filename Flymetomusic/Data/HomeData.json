@@ -1,0 +1,99 @@
+[
+  {
+    "id": 0,
+    "type": "pickedForYou",
+    "items": [
+        {
+            "type": "newReleases",
+            "title": "New Releases",
+            "backgroundColor": "#EA2E7C"
+        },
+        {
+            "type": "chart",
+            "title": "Chart",
+            "backgroundColor": "#699634"
+        },
+        {
+            "type": "mood",
+            "title": "Mood",
+            "backgroundColor": "#F79804"
+        }
+    ]
+  },
+  {
+    "id": 1,
+    "type": "madeForYou",
+    "items": [
+        {
+            "title": "Made For You",
+            "text": "Listen to music recommended for you and explore more music",
+            "image": "music1"
+        }
+    ]
+  },
+  {
+    "id": 2,
+    "type": "forYou",
+    "buttons": [
+      {
+        "id": 0,
+        "type": "trending",
+        "title": "Trending"
+      },
+      {
+        "id": 1,
+        "type": "topSongs",
+        "title": "Top Songs"
+      },
+      {
+        "id": 2,
+        "type": "recentlyPlayed",
+        "title": "Recently Played"
+      }
+    ],
+    "items": [
+      {
+        "id": 1234,
+        "type": "trending",
+        "musicName": "asdasmdka",
+        "artistName": "Müslüm",
+        "appUrl": ""
+      },
+      {
+        "id": 4531,
+        "type": "trending",
+        "musicName": "asdasmdka",
+        "artistName": "Müslüm",
+        "appUrl": ""
+      },
+      {
+        "id": 7474,
+        "type": "trending",
+        "musicName": "asdasmdka",
+        "artistName": "Müslüm",
+        "appUrl": ""
+      },
+      {
+        "id": 3313,
+        "type": "topSongs",
+        "musicName": "asdasmdka",
+        "artistName": "Müslüm",
+        "appUrl": ""
+      },
+      {
+        "id": 4151,
+        "type": "topSongs",
+        "musicName": "asdasmdka",
+        "artistName": "Müslüm",
+        "appUrl": ""
+      },
+      {
+        "id": 5662,
+        "type": "topSongs",
+        "musicName": "asdasmdka",
+        "artistName": "Müslüm",
+        "appUrl": ""
+      }
+    ]
+  }
+]

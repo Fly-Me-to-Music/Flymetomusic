@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct FlymetomusicApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+    @StateObject private var navManager = NavigationManager()
+
+        var body: some Scene {
+            WindowGroup {
+                MainView()
+                    .environmentObject(navManager) // NavigationManager'ı tüm uygulamada paylaş
+            }
         }
+}
+
+
+
+struct FlymetomusicAppView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
