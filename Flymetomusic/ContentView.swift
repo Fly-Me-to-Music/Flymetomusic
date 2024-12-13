@@ -1,8 +1,9 @@
 import SwiftUI
 
+
 struct ContentView: View {
     @StateObject private var viewModel = HomeViewModel()
-
+ 
     var body: some View {
         VStack {
             Home()
@@ -15,6 +16,10 @@ struct ContentView: View {
                         opacity: 1)
                 )
         }
-        .foregroundColor(Color.white)
+    }
+}
+struct ContenttView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }

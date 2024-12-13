@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct PickedForYou: View {
-    var items: [HomeModel]
-    
+    var section: HomeModel
+    @EnvironmentObject var navManager: NavigationManager
     func colorFromHex(hex: String) -> Color {
         var hexColor = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         if hexColor.hasPrefix("#") {
@@ -35,36 +35,36 @@ struct PickedForYou: View {
         VStack(alignment: .leading) {
             Text("Picked For You")
             HStack {
-                ForEach(items.flatMap { $0.items ?? [] }, id: \.title) { item in
+                ForEach(section.items!, id: \.title) { item in
                     let bgColor = colorFromHex(hex: item.backgroundColor ?? "#FFFFFF")
                     VStack(alignment: .leading) {
                         if item.type == "newReleases" {
                             Button(action: {
-                                // Yeni sayfaya yönlendirme işlemi
-                                // NavigationLink kullanarak başka sayfaya yönlendirebilirsiniz.
-                                print("Navigating to New Releases")
-                            }) {
-                                VStack(spacing: 0) {
-                                    ZStack {
-                                        Image("music2")
-                                            .resizable()
+                                            navManager.navigate(to: Routes.detail)
+//                                            navManager.path.append("Detail")
+                                        }) {
+                                            VStack(spacing: 0) {
+                                                ZStack {
+                                                    Image("music2")
+                                                        .resizable()
+                                                        .aspectRatio(16/9, contentMode: .fit)
+                                                    Image("music1")
+                                                        .resizable()
+                                                        .scaledToFit()
+                                                        .frame(width: 30)
+                                                }
+                                                Text(item.title ?? "NoType")
+                                                    .font(.system(size: 14))
+                                                    .padding(.bottom, 4)
+                                                    .foregroundColor(Color.black)
+                                            }
+                                            .frame(width: (UIScreen.main.bounds.width - 30) / 3)
                                             .aspectRatio(16/9, contentMode: .fit)
-                                        Image("music1")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 30)
-                                    }
-                                    Text(item.title ?? "NoType")
-                                        .font(.system(size: 14))
-                                        .padding(.bottom, 4)
-                                        .foregroundColor(Color.black)
-                                }
-                                .frame(width: (UIScreen.main.bounds.width - 30) / 3)
-                                .aspectRatio(16/9, contentMode: .fit)
-                                .padding(.top, 6)
-                                .background(bgColor)
-                                .cornerRadius(10)
-                            }
+                                            .padding(.top, 6)
+                                            .background(bgColor)
+                                            .cornerRadius(10)
+                                        }
+                           
                         } else if item.type == "chart" {
                             Button(action: {
                                 // Chart sayfasına yönlendirme
@@ -126,8 +126,8 @@ struct PickedForYou: View {
         .frame(maxWidth: .infinity)
     }
 }
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+struct PickedForYouView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}

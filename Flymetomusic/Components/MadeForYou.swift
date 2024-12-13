@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MadeForYou: View {
-    var items: [HomeModel]
+    var items: [HomeModel.Item]
     
     var body: some View {
         VStack{
             VStack{
-                ForEach(items.flatMap { $0.items ?? [] }, id: \.title) { item in
+                ForEach(items, id: \.title) { item in
                     VStack(alignment: .leading){
                         Text(item.title!)
                             .font(.headline)
